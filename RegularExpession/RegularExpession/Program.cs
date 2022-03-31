@@ -7,12 +7,20 @@ namespace RegularExpession
         {
             UserRegistration userRegistration = new UserRegistration();
             Console.WriteLine("Enter First name");
-            string FirstName=Console.ReadLine();
+            string FirstName = Console.ReadLine();
             userRegistration.validFirstName(FirstName);
 
             Console.WriteLine("Enter Last name");
             string LastName = Console.ReadLine();
             userRegistration.validLastName(LastName);
-        }        
+
+            Console.WriteLine("Enter Email");
+            string Email = Console.ReadLine();
+            userRegistration.validEmail(Email);
+
+            Console.WriteLine("Enter Mobile Number");
+            string MobileNo = Console.ReadLine();
+            userRegistration.validMobileNo(MobileNo);
+        }
     }
 }
