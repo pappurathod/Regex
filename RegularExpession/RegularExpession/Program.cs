@@ -13,6 +13,10 @@ namespace RegularExpession
             Console.WriteLine("Enter Last name");
             string LastName = Console.ReadLine();
             userRegistration.validLastName(LastName);
+
+            Console.WriteLine("Enter Email");
+            string Email = Console.ReadLine();
+            userRegistration.validEmail(Email);
         }        
     }
 }
