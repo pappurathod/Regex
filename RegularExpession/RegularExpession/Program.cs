@@ -17,7 +17,8 @@ namespace RegularExpession
                 Console.WriteLine("5 for Password");
                 Console.WriteLine("6 for Password at least one Upper case");
                 Console.WriteLine("7 for Password at least one Number");
-                Console.WriteLine("8 for Exit");
+                Console.WriteLine("8 for Password at least one special char");
+                Console.WriteLine("9 for Exit");
                 choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
