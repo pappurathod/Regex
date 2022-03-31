@@ -17,14 +17,10 @@ namespace RegularExpession
         public void validFirstName(string FirstName)
         {
 
-            if (FirstNameR.IsMatch(FirstName))
-            {
-                Console.WriteLine("{0} First Name is valid", FirstName);
-            }
-            else
-            {
-                Console.WriteLine("{0} First Name is not valid", FirstName);
-            }
+            if (FirstNameR.IsMatch(FirstName))            
+                Console.WriteLine("{0} First Name is valid", FirstName);            
+            else            
+                Console.WriteLine("{0} First Name is not valid", FirstName);            
         }
         public void validLastName(string LastName)
         {
