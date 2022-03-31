@@ -45,14 +45,19 @@ namespace RegularExpession
                         string Password = Console.ReadLine();
                         userRegistration.validPassword(Password);
                         break;
-                    case 10:
+                    case 6:
+                        Console.WriteLine("Enter Password");
+                        string Password1 = Console.ReadLine();
+                        userRegistration.validPasswordR2(Password1);
+                        break;
+                    case 7:
                         Console.WriteLine("Thank you");
                         break;
                     default:
                         Console.WriteLine("Invalid Choice");
                         break;
                 }
-            } while (choice != 6);
+            } while (choice != 7);
         }    
     }
 }
