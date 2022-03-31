@@ -13,6 +13,7 @@ namespace RegularExpession
         public Regex LastNameR = new Regex(@"^[A-Z]{1}[a-zA-Z]{2,}$");
         public Regex EmailR = new Regex(@"^[a-z]{3,}([.]{1}[a-z]{3,})?@bl.co([.]{1}[a-z]{2})?$");
         public Regex MobileNoR = new Regex(@"^[0-9]{2}[ ][6-9]{1}[0-9]{9}$");
+        public Regex PasswordR = new Regex(@"^[a-zA-Z0-9]{8,}$");
 
         public void validFirstName(string FirstName)
         {
@@ -57,6 +58,19 @@ namespace RegularExpession
             else
             {
                 Console.WriteLine("{0} Mobile Number is not valid", MobileNo);
+            }
+        }
+
+        public void validPassword(string Password)
+        {
+
+            if (PasswordR.IsMatch(Password))
+            {
+                Console.WriteLine("{0} Password is valid", Password);
+            }
+            else
+            {
+                Console.WriteLine("{0} Password is not valid", Password);
             }
         }
     }
