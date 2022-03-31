@@ -17,6 +17,7 @@ namespace RegularExpession
         public Regex PasswordR2 = new Regex(@"^(?=.*[A-Z])[a-zA-Z0-9]{8,}$");
         public Regex PasswordR3 = new Regex(@"^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$");
         public Regex PasswordR4 = new Regex(@"^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9]{8,}$");
+        public Regex CheckEmailR = new Regex(@"^[a-z]{3,}(([.|+]{1})?([-]{1})?[0-9]{1,})?@[a-z0-9]{1,}.[a-z]{3}(.[a-z]{2,4})?$");       
 
         public void validFirstName(string FirstName)
         {
@@ -28,7 +29,6 @@ namespace RegularExpession
         }
         public void validLastName(string LastName)
         {
-
             if (FirstNameR.IsMatch(LastName))
             {
                 Console.WriteLine("{0} Last Name is valid", LastName);
@@ -40,7 +40,6 @@ namespace RegularExpession
         }
         public void validEmail(string Email)
         {
-
             if (EmailR.IsMatch(Email))
             {
                 Console.WriteLine("{0} Email is valid", Email);
@@ -50,10 +49,8 @@ namespace RegularExpession
                 Console.WriteLine("{0} Email is not valid", Email);
             }
         }
-
         public void validMobileNo(string MobileNo)
         {
-
             if (MobileNoR.IsMatch(MobileNo))
             {
                 Console.WriteLine("{0} Mobile Number is valid", MobileNo);
@@ -63,10 +60,8 @@ namespace RegularExpession
                 Console.WriteLine("{0} Mobile Number is not valid", MobileNo);
             }
         }
-
         public void validPassword(string Password)
         {
-
             if (PasswordR.IsMatch(Password))
             {
                 Console.WriteLine("{0} Password is valid", Password);
@@ -78,7 +73,6 @@ namespace RegularExpession
         }
         public void validPasswordR2(string Password2)
         {
-
             if (PasswordR2.IsMatch(Password2))
             {
                 Console.WriteLine("{0} Password is valid", Password2);
@@ -90,7 +84,6 @@ namespace RegularExpession
         }
         public void validPasswordR3(string Password3)
         {
-
             if (PasswordR3.IsMatch(Password3))
             {
                 Console.WriteLine("{0} Password is valid", Password3);
@@ -103,7 +96,6 @@ namespace RegularExpession
 
         public void validPasswordR4(string Password_4)
         {
-
             if (PasswordR4.IsMatch(Password_4))
             {
                 Console.WriteLine("{0} Password is valid", Password_4);
@@ -111,6 +103,18 @@ namespace RegularExpession
             else
             {
                 Console.WriteLine("{0} Password is not valid", Password_4);
+            }
+        }
+
+        public void validCheckEmailSample(string CheckEmail)
+        {
+            if (CheckEmailR.IsMatch(CheckEmail))
+            {
+                Console.WriteLine("{0} Email is valid", CheckEmail);
+            }
+            else
+            {
+                Console.WriteLine("{0} Email is not valid", CheckEmail);
             }
         }
     }

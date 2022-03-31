@@ -18,7 +18,8 @@ namespace RegularExpession
                 Console.WriteLine("6 for Password at least one Upper case");
                 Console.WriteLine("7 for Password at least one Number");
                 Console.WriteLine("8 for Password at least one special char");
-                Console.WriteLine("9 for Exit");
+                Console.WriteLine("9 for Check Email Validation");
+                Console.WriteLine("10 for Exit");
                 choice = int.Parse(Console.ReadLine());
 
                 switch (choice)
@@ -64,13 +65,18 @@ namespace RegularExpession
                         userRegistration.validPasswordR4(Password_3);
                         break;
                     case 9:
+                        Console.WriteLine("Enter Password");
+                        string CheckEmail = Console.ReadLine();
+                        userRegistration.validCheckEmailSample(CheckEmail);
+                        break;
+                    case 10:
                         Console.WriteLine("Thank you");
                         break;
                     default:
                         Console.WriteLine("Invalid Choice");
                         break;
                 }
-            } while (choice != 9);
+            } while (choice != 10);
         }    
     }
 }
