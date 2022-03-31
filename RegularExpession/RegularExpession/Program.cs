@@ -17,6 +17,12 @@ namespace RegularExpession
             Console.WriteLine("Enter Email");
             string Email = Console.ReadLine();
             userRegistration.validEmail(Email);
+
+
+            Console.WriteLine("Enter Mobile Number");
+            string MobileNo = Console.ReadLine();
+            userRegistration.validMobileNo(MobileNo);
+
         }
     }
 }
