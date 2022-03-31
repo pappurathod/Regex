@@ -16,6 +16,7 @@ namespace RegularExpession
         public Regex PasswordR = new Regex(@"^[a-zA-Z0-9]{8,}$");
         public Regex PasswordR2 = new Regex(@"^(?=.*[A-Z])[a-zA-Z0-9]{8,}$");
         public Regex PasswordR3 = new Regex(@"^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$");
+        public Regex PasswordR4 = new Regex(@"^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9]{8,}$");
 
         public void validFirstName(string FirstName)
         {
@@ -97,6 +98,19 @@ namespace RegularExpession
             else
             {
                 Console.WriteLine("{0} Password is not valid", Password3);
+            }
+        }
+
+        public void validPasswordR4(string Password_4)
+        {
+
+            if (PasswordR4.IsMatch(Password_4))
+            {
+                Console.WriteLine("{0} Password is valid", Password_4);
+            }
+            else
+            {
+                Console.WriteLine("{0} Password is not valid", Password_4);
             }
         }
     }
