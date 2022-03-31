@@ -7,7 +7,7 @@ namespace RegularExpession
         {
             UserRegistration userRegistration = new UserRegistration();
             Console.WriteLine("Enter First name");
-            string FirstName=Console.ReadLine();
+            string FirstName = Console.ReadLine();
             userRegistration.validFirstName(FirstName);
 
             Console.WriteLine("Enter Last name");
@@ -17,6 +17,6 @@ namespace RegularExpession
             Console.WriteLine("Enter Email");
             string Email = Console.ReadLine();
             userRegistration.validEmail(Email);
-        }        
+        }
     }
 }

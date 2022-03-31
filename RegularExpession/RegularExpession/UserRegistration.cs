@@ -9,15 +9,15 @@ namespace RegularExpession
 {
     public class UserRegistration
     {
-        public Regex FirstNameR =new Regex(@"^[A-Z]{1}[a-zA-Z]{2,}$");
+        public Regex FirstNameR = new Regex(@"^[A-Z]{1}[a-zA-Z]{2,}$");
         public Regex LastNameR = new Regex(@"^[A-Z]{1}[a-zA-Z]{2,}$");
         public Regex EmailR = new Regex(@"^[a-z]{3,}([.]{1}[a-z]{3,})?@bl.co([.]{1}[a-z]{2})?$");
         public void validFirstName(string FirstName)
         {
-            
+
             if (FirstNameR.IsMatch(FirstName))
             {
-                Console.WriteLine("{0} First Name is valid",FirstName);
+                Console.WriteLine("{0} First Name is valid", FirstName);
             }
             else
             {
