@@ -45,6 +45,12 @@ namespace RegularExpressionTest
             Result = userRegistration.validPassword("AsdFg123");
             Assert.AreEqual("Password is valid", Result);
         }
+        [Test]
+        public void Given_Email_When_valid_ShouldReturn_Valid()
+        {
+            Result = userRegistration.validCheckEmailSample("abc-100@yahoo.com");
+            Assert.AreEqual("Email is valid", Result);
+        }
     }
 }
 
