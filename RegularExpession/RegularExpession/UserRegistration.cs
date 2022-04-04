@@ -91,16 +91,12 @@ namespace RegularExpession
             }
         }
 
-        public void validCheckEmailSample(string CheckEmail)
+        public string validCheckEmailSample(string CheckEmail)
         {
             if (CheckEmailR.IsMatch(CheckEmail))
-            {
-                Console.WriteLine("{0} Email is valid", CheckEmail);
-            }
+                return "Email is valid";
             else
-            {
-                Console.WriteLine("{0} Email is not valid", CheckEmail);
-            }
+                return "Email is not valid";
         }
     }
 }
