@@ -19,57 +19,42 @@ namespace RegularExpession
         public Regex PasswordR4 = new Regex(@"^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9]{8,}$");
         public Regex CheckEmailR = new Regex(@"^[a-z]{3,}(([.|+]{1})?([-]{1})?[0-9]{1,})?@[a-z0-9]{1,}.[a-z]{3}(.[a-z]{2,4})?$");       
 
-        public void validFirstName(string FirstName)
+        public string validFirstName(string FirstName)
         {
 
-            if (FirstNameR.IsMatch(FirstName))            
-                Console.WriteLine("{0} First Name is valid", FirstName);            
-            else            
-                Console.WriteLine("{0} First Name is not valid", FirstName);            
+            if (FirstNameR.IsMatch(FirstName))
+                return "First Name is valid"; //Console.WriteLine("{0} First Name is valid", FirstName);            
+            else
+                //Console.WriteLine("{0} First Name is not valid", FirstName);
+            return "First Name is not valid";
         }
-        public void validLastName(string LastName)
+        public string validLastName(string LastName)
         {
             if (FirstNameR.IsMatch(LastName))
-            {
-                Console.WriteLine("{0} Last Name is valid", LastName);
-            }
+                return "Last Name is valid";
             else
-            {
-                Console.WriteLine("{0} Last Name is not valid", LastName);
-            }
+                return "Last Name is not valid";
         }
-        public void validEmail(string Email)
+        public string validEmail(string Email)
         {
             if (EmailR.IsMatch(Email))
-            {
-                Console.WriteLine("{0} Email is valid", Email);
-            }
+                return "EmailId is valid";
             else
-            {
-                Console.WriteLine("{0} Email is not valid", Email);
-            }
+                return "EmailID is not valid";
         }
-        public void validMobileNo(string MobileNo)
+        public string validMobileNo(string MobileNo)
         {
             if (MobileNoR.IsMatch(MobileNo))
-            {
-                Console.WriteLine("{0} Mobile Number is valid", MobileNo);
-            }
+                return "MobileNo is valid";
             else
-            {
-                Console.WriteLine("{0} Mobile Number is not valid", MobileNo);
-            }
+                return "MobileNo is not valid";            
         }
-        public void validPassword(string Password)
+        public string validPassword(string Password)
         {
             if (PasswordR.IsMatch(Password))
-            {
-                Console.WriteLine("{0} Password is valid", Password);
-            }
+                return "Password is valid";
             else
-            {
-                Console.WriteLine("{0} Password is not valid", Password);
-            }
+                return "Password is not valid";            
         }
         public void validPasswordR2(string Password2)
         {
