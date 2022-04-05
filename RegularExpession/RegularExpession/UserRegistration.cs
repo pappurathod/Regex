@@ -21,82 +21,65 @@ namespace RegularExpession
 
         public string validFirstName(string FirstName)
         {
-
             if (FirstNameR.IsMatch(FirstName))
-                return "First Name is valid"; //Console.WriteLine("{0} First Name is valid", FirstName);            
-            else
-                //Console.WriteLine("{0} First Name is not valid", FirstName);
-            return "First Name is not valid";
+                return "First Name is valid";           
+            else 
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_FIRST_NAME,"");
         }
         public string validLastName(string LastName)
         {
             if (FirstNameR.IsMatch(LastName))
                 return "Last Name is valid";
             else
-                return "Last Name is not valid";
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_LAST_NAME, "");
         }
         public string validEmail(string Email)
         {
             if (EmailR.IsMatch(Email))
                 return "EmailId is valid";
             else
-                return "EmailID is not valid";
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "");
         }
         public string validMobileNo(string MobileNo)
         {
             if (MobileNoR.IsMatch(MobileNo))
                 return "MobileNo is valid";
-            else
-                return "MobileNo is not valid";            
+            else throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_MOBILE_NUMBER," ");          
         }
         public string validPassword(string Password)
         {
             if (PasswordR.IsMatch(Password))
                 return "Password is valid";
             else
-                return "Password is not valid";            
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "");
         }
         public void validPasswordR2(string Password2)
         {
-            if (PasswordR2.IsMatch(Password2))
-            {
-                Console.WriteLine("{0} Password is valid", Password2);
-            }
+            if (PasswordR2.IsMatch(Password2))            
+                Console.WriteLine("{0} Password is valid", Password2);            
             else
-            {
-                Console.WriteLine("{0} Password is not valid", Password2);
-            }
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "");                    
         }
         public void validPasswordR3(string Password3)
         {
-            if (PasswordR3.IsMatch(Password3))
-            {
-                Console.WriteLine("{0} Password is valid", Password3);
-            }
+            if (PasswordR3.IsMatch(Password3))            
+                Console.WriteLine("{0} Password is valid", Password3);            
             else
-            {
-                Console.WriteLine("{0} Password is not valid", Password3);
-            }
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "");                  
         }
-
         public void validPasswordR4(string Password_4)
         {
-            if (PasswordR4.IsMatch(Password_4))
-            {
-                Console.WriteLine("{0} Password is valid", Password_4);
-            }
+            if (PasswordR4.IsMatch(Password_4))            
+                Console.WriteLine("{0} Password is valid", Password_4);            
             else
-            {
-                Console.WriteLine("{0} Password is not valid", Password_4);
-            }
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "");           Console.WriteLine("{0} Password is not valid", Password_4);
         }
-
         public string validCheckEmailSample(string CheckEmail)
         {
             if (CheckEmailR.IsMatch(CheckEmail))
                 return "Email is valid";
             else
-                return "Email is not valid";
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "");            
         }
     }
 }
