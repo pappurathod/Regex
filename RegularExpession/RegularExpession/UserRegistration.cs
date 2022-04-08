@@ -17,69 +17,160 @@ namespace RegularExpession
         public Regex PasswordR2 = new Regex(@"^(?=.*[A-Z])[a-zA-Z0-9]{8,}$");
         public Regex PasswordR3 = new Regex(@"^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{8,}$");
         public Regex PasswordR4 = new Regex(@"^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9]{8,}$");
-        public Regex CheckEmailR = new Regex(@"^[a-z]{3,}(([.|+]{1})?([-]{1})?[0-9]{1,})?@[a-z0-9]{1,}.[a-z]{3}(.[a-z]{2,4})?$");       
+        public Regex CheckEmailR = new Regex(@"^[a-z]{3,}(([.|+]{1})?([-]{1})?[0-9]{1,})?@[a-z0-9]{1,}.[a-z]{3}(.[a-z]{2,4})?$");
 
         public string validFirstName(string FirstName)
         {
-            if (FirstNameR.IsMatch(FirstName))
-                return "First Name is valid";           
-            else 
-                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_FIRST_NAME,"");
+            bool FirstNamePattern(string FirstNamePattern) => FirstNameR.IsMatch(FirstName);
+            bool result = FirstNamePattern(FirstName);
+            try
+            {
+                if (result == false)
+                {
+                    throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_FIRST_NAME, "First Name is Invalid");
+                }
+                return "First Name is valid";
+            }
+            catch
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_FIRST_NAME, "First Name is Invalid");
+            }            
         }
         public string validLastName(string LastName)
         {
-            if (FirstNameR.IsMatch(LastName))
+            bool LastNamePattern(string LastNamePattern) => LastNameR.IsMatch(LastName);
+            bool result = LastNamePattern(LastName);
+            try
+            {
+                if (result == false)
+                {
+                    throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_LAST_NAME, "Last Name is Invalid");
+                }
                 return "Last Name is valid";
-            else
-                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_LAST_NAME, "");
+            }
+            catch
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_LAST_NAME, "Last Name is Invalid");
+            }
         }
         public string validEmail(string Email)
         {
-            if (EmailR.IsMatch(Email))
+            bool EmailPattern(string EmailPattern) => EmailR.IsMatch(Email);
+            bool result = EmailPattern(Email);
+            try
+            {
+                if (result == false)
+                {
+                    throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "EmailId is Invalid");
+                }
                 return "EmailId is valid";
-            else
-                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "");
+            }
+            catch
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "EmailId is Invalid");
+            }
         }
         public string validMobileNo(string MobileNo)
         {
-            if (MobileNoR.IsMatch(MobileNo))
+            bool MobileNoPattern(string MobileNoPattern) => MobileNoR.IsMatch(MobileNo);
+            bool result = MobileNoPattern(MobileNo);
+            try
+            {
+                if (result == false)
+                {
+                    throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_MOBILE_NUMBER, "MobileNo is Invalid");
+                }
                 return "MobileNo is valid";
-            else throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_MOBILE_NUMBER," ");          
+            }
+            catch
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_MOBILE_NUMBER, "MobileNo is Invalid");
+            }          
         }
         public string validPassword(string Password)
         {
-            if (PasswordR.IsMatch(Password))
+            bool PasswordPattern(string PasswordPattern) => PasswordR.IsMatch(Password);
+            bool result = PasswordPattern(Password);
+            try
+            {
+                if (result == false)
+                {
+                    throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "Password is Invalid");
+                }
                 return "Password is valid";
-            else
-                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "");
+            }
+            catch
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "Password is Invalid");
+            }
         }
-        public void validPasswordR2(string Password2)
+        public string validPasswordR2(string Password2)
         {
-            if (PasswordR2.IsMatch(Password2))            
-                Console.WriteLine("{0} Password is valid", Password2);            
-            else
-                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "");                    
+            bool PasswordR2Pattern(string PasswordR2Pattern) => PasswordR.IsMatch(Password2);
+            bool result = PasswordR2Pattern(Password2);
+            try
+            {
+                if (result == false)
+                {
+                    throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "Password is Invalid");
+                }
+                return "Password is valid";
+            }
+            catch
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "Password is Invalid");
+            }                    
         }
-        public void validPasswordR3(string Password3)
+        public string validPasswordR3(string Password3)
         {
-            if (PasswordR3.IsMatch(Password3))            
-                Console.WriteLine("{0} Password is valid", Password3);            
-            else
-                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "");                  
+            bool PasswordR3Pattern(string PasswordR3Pattern) => PasswordR.IsMatch(Password3);
+            bool result = PasswordR3Pattern(Password3);
+            try
+            {
+                if (result == false)
+                {
+                    throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "Password is Invalid");
+                }
+                return "Password is valid";
+            }
+            catch
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "Password is Invalid");
+            } 
         }
-        public void validPasswordR4(string Password_4)
+        public string validPasswordR4(string Password_4)
         {
-            if (PasswordR4.IsMatch(Password_4))            
-                Console.WriteLine("{0} Password is valid", Password_4);            
-            else
-                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "");           Console.WriteLine("{0} Password is not valid", Password_4);
+            bool PasswordR4Pattern(string PasswordR4Pattern) => PasswordR.IsMatch(Password_4);
+            bool result = PasswordR4Pattern(Password_4);
+            try
+            {
+                if (result == false)
+                {
+                    throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "Password is Invalid");
+                }
+                return "Password is valid";
+            }
+            catch
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_PASSWORD, "Password is Invalid");
+            }
         }
         public string validCheckEmailSample(string CheckEmail)
         {
-            if (CheckEmailR.IsMatch(CheckEmail))
+            bool CheckEmailPattern(string CheckEmailPattern) => CheckEmailR.IsMatch(CheckEmail);
+            bool result = CheckEmailPattern(CheckEmail);
+            try
+            {
+                if (result == false)
+                {
+                    throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "Email is Invalid");
+                }
                 return "Email is valid";
-            else
-                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "");            
+            }
+            catch
+            {
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_EMAIL, "Email is Invalid");
+            }          
         }
     }
 }
